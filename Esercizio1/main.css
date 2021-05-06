@@ -1,0 +1,24 @@
+.needTopSpace{
+    margin-top: 1em;
+}
+
+div.divForm{
+    margin-top: 3em;
+    /* width: 500px;
+    margin: auto; */
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.151) ;
+}
+
+textarea.formTextArea{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    resize: none;
+}
+
+.buttoni{
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
