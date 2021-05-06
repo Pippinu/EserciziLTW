@@ -12,7 +12,19 @@ div.divForm{
     padding: 2px;
 }
 
-.divForm input[type='radio']:checked + label.radio { 
-    background-color: #FFBF00;
- }
+.divSex{
+    display: inline-flex;
+    border-radius: 5px;
+}
+.divSex label{
+    background: white;
+}
+
+.size50{
+    width: 50%;
+    background: white;
+}
+.size50:hover{
+    background: rgba(0, 0, 0, 0.151);
+}
  
