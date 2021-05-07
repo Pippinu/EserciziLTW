@@ -17,17 +17,17 @@
         <form id="myForm" onsubmit="checkBeforeSubmit()" method="GET">
             <div class="row">
                 <div class="col">
-                    <label for="inputNomeCognome">Nome</label>
+                    <label for="inputNomeCognome">Nome e Cognome</label>
                     <input type="text" class="form-control" id="inputNomeCognome" placeholder="Mario Rossi" maxlength="50" onfocusout="checkNameSurname()">
                 </div>
                 <div class="col d-grid">
-                    <label class="form-check-label" for="divSesso">Sesso</label>
+                    <label class="form-check-label" for="divSex">Sesso</label>
                     <div class="divSex mb-1 btn-group btn-group-toggle text-center" data-toggle="buttons">
                         <label class="btn btn-outline-primary" for="option1">
-                            <input type="radio" name="optionsSex" id="option1" autocomplete="off" hidden> M
+                            <input type="radio" name="optionsSex" id="option1" autocomplete="off" value='M' hidden> M
                         </label>
                         <label class="btn btn-outline-danger" for='option2'>
-                            <input type="radio" name="optionsSex" id="option2" autocomplete="off" hidden> F
+                            <input type="radio" name="optionsSex" id="option2" autocomplete="off" value='F' hidden> F
                         </label>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
             <div class="row mb-3">
                 <div class="col">
                     <label class="form-check-label" for="selectAteneo">Ateneo</label>
-                    <select class="form-control">
+                    <select class="form-control" id="selectAteneo">
                         <option selected value="0">Scegli Ateneo</option>
                         <option value="1">La Sapienza</option>
                         <option value="2">Tor Vergata</option>
@@ -52,10 +52,10 @@
             <div class="row mb-3">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="size50 btn btn-outline-secondary">
-                        <input type="checkbox" name="studenteLavoratore" autocomplete="off" hidden> Studente
+                        <input class="studenteLavoratoreCB" type="checkbox" name="studenteLavoratore" autocomplete="off" hidden> Studente
                     </label>
                     <label class="size50 btn btn-outline-secondary">
-                        <input type="checkbox" name="studenteLavoratore" autocomplete="off" hidden> Lavoratore
+                        <input class="studenteLavoratoreCB" type="checkbox" name="studenteLavoratore" autocomplete="off" hidden> Lavoratore
                     </label>
                 </div>
             </div>
@@ -69,7 +69,7 @@
             
             <div class="btn-group buttoni" role="group">
                 <button type="submit" class="btn btn-outline-primary px-5">Invia</button>
-                <button type="reset" class="btn btn-outline-danger px-2" onclick="resetForm('myForm')">Reset</button>
+                <button type="reset" class="btn btn-outline-danger px-2">Reset</button>
             </div>
         </form>
       </div>

@@ -1,9 +1,11 @@
 let checkCap = () => {
     let capField = document.getElementById("inputCap").value;
-    if (capField.length != 5){
-        confirm('CAP deve essere di 5 numeri, riprova!');
+    if (capField.length != 5 || !Number.isInteger(parseInt(capField, 10))){
+        confirm('CAP deve essere di 5 numeri, no lettere, riprova!');
         document.getElementById("inputCap").value = null;
+        return null;
     }
+    return capField;
 }
 
 let checkNameSurname = () => {
@@ -19,17 +21,30 @@ function hasNumber(myString) {
 }
 
 let checkBeforeSubmit = () => {
-    let nameSurnameField = document.getElementById("inputNomeCognome").value;
-    let sexField = document.getElementByName("optionSex").value;
-    let ateneoField = document.getElementById("inputNomeCognome").value;
+    // let nameSurnameField = document.getElementById("inputNomeCognome").value;
+    // let sexField = document.getElementByName("optionSex").value;
+    // let ateneoField = document.getElementById("inputNomeCognome").value;
+    // let capField = checkCap();
+    // let studenteLavoratoreField = fillStudenteLavoratoreArray();
+
+    // let sexField;
+    // let ateneoField;
+    // let studenteLavoratoreField;
+
+    let nameSurnameField = document.forms['myForm']['inputNomeCognome'].value;
+    let sexField = getSexFieldValue();
+    let ateneoField = document.forms['myForm']['selectAteneo'].value;
+    let capField = checkCap();
     let studenteLavoratoreField = fillStudenteLavoratoreArray();
 
-    confirm(nameSurnameField.length + ' ' + sexField + ' ' + ateneoField + ' ' + studenteLavoratoreField.length + ' ');
-    if(nameSurnameField.length > 0 && sexField !== '' && ateneoField !== 0){
+    // confirm('Variabili ottenute' + ' ' + nameSurnameField + ' ' + sexField + ' ' + ateneoField + ' ' + capField + ' ' + studenteLavoratoreField);
+    // confirm(nameSurnameField.length + ' ' + sexField + ' ' + ateneoField + ' ' + studenteLavoratoreField.length);
+    if(nameSurnameField.length > 0 && sexField.localeCompare('') && ateneoField !== 0){
         if(studenteLavoratoreField.length === 2){
-            if(document.getElementById("lavoroSvoltoTextArea").value.length === 0)
-            confirm("Hai selezionato Studente e Lavoratore, descrizione lavoro non puo essere vuota, riprova!");
-            return false;
+            if(document.getElementById("lavoroSvoltoTextArea").value.length === 0){
+                confirm("Hai selezionato Studente e Lavoratore, descrizione lavoro non puo essere vuota, riprova!");
+                return false;
+            }
         }
         confirm("Dati corretti, Invio!");
         return true;
@@ -41,13 +56,24 @@ let checkBeforeSubmit = () => {
 
 let fillStudenteLavoratoreArray = () => {
     var array = []
-    var checkboxes = document.querySelectorAll("input:checkbox[name='studenteLavoratore']:checked")
+    var checkboxes = document.querySelectorAll(".studenteLavoratoreCB:checked")
 
     for (var i = 0; i < checkboxes.length; i++) {
     array.push(checkboxes[i].value)
     }
-
+    
     return array;
+}
+
+let getSexFieldValue = () => {
+    var radios = document.getElementsByName('optionsSex');
+
+    for (var i = 0, length = radios.length; i < length; i++){
+        if (radios[i].checked) return radios[i].value;
+    }
+
+    confirm('Non hai inserito sesso, riprova!');
+    return '';
 }
 
 let resetForm = formName => document.getElementById(formName).reset();
