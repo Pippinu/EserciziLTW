@@ -20,8 +20,15 @@ function hasNumber(myString) {
     return /\d/.test(myString);
 }
 
-let checkBeforeSubmit = () => {
+window.onload = function loadEl(){
+    let el = document.getElementById("submitButton");
+    if(el) el.addEventListener("click", function(event){
+        submitFunc(event);
+    });
+    else confirm('NULL');
+}
 
+let submitFunc = (event) => {
     let nameSurnameField = document.forms['myForm']['inputNomeCognome'].value;
     let sexField = getSexFieldValue();
     let ateneoField = document.forms['myForm']['selectAteneo'].value;
@@ -32,14 +39,16 @@ let checkBeforeSubmit = () => {
         if(studenteLavoratoreField.length === 2){
             if(document.getElementById("lavoroSvoltoTextArea").value.length === 0){
                 confirm("Hai selezionato Studente e Lavoratore, descrizione lavoro non puo essere vuota, riprova!");
+                event.preventDefault();
                 return false;
             }
         }
         confirm("Dati corretti, Invio!");
+        document.getElementById('myForm').submit();
         return true;
     }
     confirm("Dati non corretti, Riprova!");
-    resetForm('myForm');
+    event.preventDefault();
     return false;
 }
 
@@ -61,7 +70,6 @@ let getSexFieldValue = () => {
         if (radios[i].checked) return radios[i].value;
     }
 
-    confirm('Non hai inserito sesso, riprova!');
     return '';
 }
 
