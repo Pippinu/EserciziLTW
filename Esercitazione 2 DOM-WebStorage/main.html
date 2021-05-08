@@ -37,11 +37,13 @@
                     </div>
 
                     <div class="col btn-group">
-                        <button type="button" class="btn btn-outline-primary">Stampa Local Storage</button>
-                        <button type="button" class="btn btn-outline-primary">Reset Local Storage</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="printLS()">Stampa Local Storage</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="clearLS()">Reset Local Storage</button>
                     </div>
                 </div>
             </form>
         </div>
+
+        <div id="divPrintLS" class="printLSDiv"></div>
     </body>
 </html>

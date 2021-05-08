@@ -11,9 +11,18 @@ let addObjLS = () => {
         }
 
         localStorage.setItem(localStorage.length, JSON.stringify(obj));
+        confirm('Aggiunto: \nNome: ' + obj.nome + '\n Cognome: ' + obj.cognome + '\n Matricola: ' + obj.matricola);
     }
 }
 
 let printLS = () => {
-    // for()
+    document.getElementById('divPrintLS').innerHTML = '';
+    for(var i=0; i < localStorage.length; i++){
+        document.getElementById('divPrintLS').innerHTML += localStorage.getItem(i) + '\n';
+    }
+}
+
+let clearLS = () => {
+    localStorage.clear();
+    document.getElementById('divPrintLS').innerHTML = '';
 }
