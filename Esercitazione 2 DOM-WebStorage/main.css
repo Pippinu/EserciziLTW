@@ -1,0 +1,13 @@
+body{
+    height: 100;
+}
+
+div.divForm{
+    margin-top: 5%;
+    width: 750px;
+    height: max-content;
+    background-color: rgba(0, 0, 0, 0.151);
+
+    border: 1px solid black;
+    border-radius: 10px;
+}
