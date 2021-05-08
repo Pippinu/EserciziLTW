@@ -1,0 +1,7 @@
+div.col{
+    background-color: grey;
+    width: 100px;
+    height: 200px;
+
+    border: 1px solid black;
+}
