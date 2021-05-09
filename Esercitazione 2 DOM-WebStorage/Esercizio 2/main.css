@@ -1,7 +1,15 @@
-div.col{
+div.c1{
     background-color: grey;
     width: 100px;
     height: 200px;
 
     border: 1px solid black;
+}
+
+div.container{
+    /* width: min-content;
+    height: min-content; */
+
+    background-color: black;
+    padding: 20px;
 }
