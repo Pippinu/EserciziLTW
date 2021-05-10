@@ -1,0 +1,15 @@
+div.containter{
+    display: grid;
+}
+div.row{
+    display: flex;
+}
+
+div.col, span.col{
+    background-color: grey;
+    margin: 2px;
+    border: 1px solid black;
+
+    width: 150px;
+    height: 150px;
+} 
