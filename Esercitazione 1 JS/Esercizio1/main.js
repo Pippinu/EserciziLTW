@@ -7,6 +7,14 @@ let checkForm = formName => {
     let regione = document.forms[formName]["selectResidenza"].value;                        //Check !== -1
     let email = document.forms[formName]["inputEmail"].value;                               //Check notEmpty
     let telefono = document.forms[formName]["inputTelefono4"].value;                        //Check notEmpty
+
+    //Metodo Alternativo
+    // let cognome = document.getElementById('inputCognome4').value                         //Check notEmpty
+    // let nome = document.getElementById('inputNome4').value                               //Check notEmpty
+    // let matricola = parseInt(document.getElementById('inputMatricola4').value, 10);      //Check isNumber
+    // let regione = document.getElementById('selectResidenza').value;                      //Check !== -1
+    // let email = document.getElementById('inputCognome4').value;                          //Check notEmpty
+    // let telefono = document.getElementById('inputTelefono4').value;                      //Check notEmpty
     
     if(cognome.length > 0 && nome.length > 0 && Number.isInteger(matricola) && regione !== -1 && (email.length > 0 || telefono.length > 0)) {
         console.log(cognome.length + ' ' + nome.length  + ' ' + Number.isInteger(matricola) + ' ' + regione + ' ' + email.length + ' ' + telefono.length);
