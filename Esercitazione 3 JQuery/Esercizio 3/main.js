@@ -19,7 +19,7 @@ window.onload = function(){
         }
     }
 
-    //VERSIONE JQUERY (CHE SPETTACOLO!)
+    //VERSIONE JQUERY (CHE SPETTACOLO!), problemi con bootstrap
     // function caricaDocumento(e){
     //     $('#documentID').load(e.target.innerHTML + '.html');
     // }
